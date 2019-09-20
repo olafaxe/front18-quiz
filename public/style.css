@@ -1,0 +1,165 @@
+html {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  font-family: "News Cycle", sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-auto-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 15% 1fr 1fr;
+  grid-template-areas:
+    " . news ."
+    ". article input"
+    ". article addbtn";
+  text-align: center;
+}
+
+.news {
+  grid-area: news;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  grid-area: article;
+  width: 400px;
+  height: 100%;
+  /* overflow-y: scroll; */
+}
+
+.article-container {
+  width: 350px;
+  height: auto;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: solid 5px #668a94;
+  background-color: #e2edf0;
+  box-shadow: 5px 5px #466068;
+  overflow-wrap: break-word;
+}
+
+.article-id {
+  display: none;
+}
+.article-title {
+  flex: 1;
+  text-align: center;
+  margin: auto;
+  margin-left: 15px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+.article-author {
+  flex: 1;
+  text-align: center;
+  margin: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.article-created {
+  flex: 1;
+  font-size: 12px;
+  text-align: center;
+  margin: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.article-content {
+  flex: 2;
+  text-align: center;
+  text-align: left;
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-right: 15px;
+  margin-bottom: 30px;
+  width: 90%;
+}
+
+.article-remove {
+  margin-left: auto;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.add-btn-container {
+  grid-area: addbtn;
+  grid-row-start: 3;
+  grid-row-end: 3;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.add-btn {
+  display: flex;
+  align-self: flex-end;
+  width: 150px;
+  height: 150px;
+  background-color: #668a94;
+}
+.add-btn::before {
+  content: "+";
+  height: auto;
+  width: 200px;
+  font-size: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-family: courier;
+  color: white;
+}
+
+.input-container {
+  grid-area: input;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  margin-right: 5%;
+  width: 100%;
+}
+
+.input-fieldset {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  width: 50%;
+  height: 400px;
+
+  display: flex;
+  flex-direction: column;
+}
+.input-container {
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+.input-close {
+  margin-left: 95%;
+  width: 25px;
+  height: 25px;
+}
+
+.article-upper {
+  display: flex;
+}
+
+.article-edit {
+  margin-top: 5px;
+  margin-right: 3px;
+}

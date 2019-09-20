@@ -1,0 +1,14 @@
+.click {
+  animation: click 0.2s 1;
+}
+@keyframes click {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}

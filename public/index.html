@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script>
+      window.onload = () => {
+        let scripts = [
+          {
+            script: "/app.js"
+          }
+        ];
+        scripts.forEach(e => {
+          let scripttag = document.createElement("script");
+          scripttag.setAttribute("src", e.script);
+          document.head.appendChild(scripttag);
+        });
+      };
+    </script>
+    <script
+      src="https://kit.fontawesome.com/7c990ce83f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="animation.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=News+Cycle&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>NEWS</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="news"><h1>All quiet on the Frontend</h1></div>
+      <div class="content"></div>
+      <div class="add-btn-container"><div class="add-btn"></div></div>
+    </div>
+  </body>
+</html>
