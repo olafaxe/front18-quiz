@@ -18,24 +18,35 @@ body {
   height: 100%;
   display: grid;
   grid-auto-columns: 1fr 1fr 1fr;
-  grid-auto-rows: 15% 1fr 1fr;
+  grid-auto-rows: 55px 1fr 1fr 1fr;
   grid-template-areas:
     " . news ."
     ". article input"
-    ". article addbtn";
+    ". article ."
+    ". . addbtn";
   text-align: center;
 }
 
 .news {
   grid-area: news;
+  height: 50px;
+}
+
+.news h1 {
+  margin: 0;
 }
 .content {
   display: flex;
   flex-direction: column;
   grid-area: article;
   width: 400px;
-  height: 100%;
+  height: 645px;
+  box-shadow: inset 0 0 10px #41595f;
   overflow-y: scroll;
+}
+
+.content::-webkit-scrollbar {
+  display: none;
 }
 
 .article-container {
@@ -99,8 +110,8 @@ body {
 }
 .add-btn-container {
   grid-area: addbtn;
-  grid-row-start: 3;
-  grid-row-end: 3;
+  grid-row-start: 4;
+  grid-row-end: 4;
   display: flex;
   flex-direction: column-reverse;
 }
