@@ -27,8 +27,6 @@ let obj = function(id, title, content, author) {
 };
 
 updateArticles(createArticleElement, "?_limit=4");
-// http://localhost:3000/articles/?_limit=10
-// http://localhost:3000/articles/?_start=11&_limit=10
 
 function updateArticles(callback, scroll, pass) {
   let passer = pass || true;
@@ -39,14 +37,11 @@ function updateArticles(callback, scroll, pass) {
     let responseObj = JSON.parse(xhr.response);
     let articles = document.querySelectorAll(".article-container");
     articles.forEach(ele => {
-      // console.log(Number(e.firstChild.innerText));
       responseObj.forEach(e => {
         if (e.id === Number(ele.firstChild.innerText && !passer)) {
-          console.log("finns ju");
           scrollLock = true;
         }
       });
-      // console.log(responseObj.id);
     });
 
     if (xhr.status != 200) {
@@ -64,8 +59,6 @@ function updateArticles(callback, scroll, pass) {
 }
 
 function editedArticle(editedArt, oldArticleId) {
-  //check oldArticleId against the dom list id's, if true delete that dom
-  //create new article with the edited version
   let DOMarticle = document.querySelectorAll(".article-container");
   DOMarticle.forEach(e => {
     if (oldArticleId === Number(e.firstChild.innerText)) {
@@ -83,16 +76,6 @@ function checkArticles(dbContent) {
     if (dbBuffer.includes(e.id)) {
       return;
     } else {
-      // if (update) {
-      //   let oldId = e.id;
-      //   let oldarticle = document.querySelectorAll(".article-container");
-      //   oldarticle.forEach(e => {
-      //     if (oldId === Number(e.firstChild.innerText)) {
-      //       e.remove();
-      //       return;
-      //     }
-      //   });
-      // }
       let art = new obj(e.id, e.title, e.content, e.author);
       let fakeobj = [];
       fakeobj.push(art);
@@ -334,8 +317,6 @@ container.addEventListener("click", e => {
                 } else {
                   editedArticle(responseObj, e.id);
                   inputcontainer.remove();
-                  // location.reload();
-                  // updateArticles(checkArticles);
                   addfailsafe = false;
                 }
               };
@@ -407,15 +388,8 @@ container.addEventListener("click", e => {
 });
 
 content.addEventListener("scroll", e => {
-  // console.log(e.target.scrollHeight);
   if (e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight) {
-    console.log("scrolled");
     startPos = startPos + 3;
     updateArticles(createArticleElement, `?_start=${startPos}&_limit=3`, false);
   }
-
-  // let xhr = new XMLHttpRequest();
-  // xhr.open("GET", `http://localhost:3000/articles/?_"start=5&_limit=3"`);
-  // xhr.send();
-  // xhr.onload = function() {};
 });
