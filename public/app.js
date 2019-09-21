@@ -3,34 +3,56 @@ let content = document.querySelector(".content");
 let addbtn = document.querySelector(".add-btn-container");
 
 let addfailsafe = false;
+let update = false;
+let scrollLock = false;
+let startPos = 1;
 
 let dbBuffer = [];
 
-let obj = function(title, content, author) {
-  this.id = Number(
-    Math.random()
-      .toString()
-      .slice(2)
-  );
+let obj = function(id, title, content, author) {
+  if (typeof id === "undefined") {
+    this.id = Number(
+      Math.random()
+        .toString()
+        .slice(2)
+    );
+  } else {
+    this.id = id;
+  }
+
   this.title = title;
   this.content = content;
   this.author = author;
   this.created = new Date().toUTCString();
 };
 
-updateArticles(createArticleElement);
+updateArticles(createArticleElement, "?_limit=4");
+// http://localhost:3000/articles/?_limit=10
+// http://localhost:3000/articles/?_start=11&_limit=10
 
-function updateArticles(callback) {
+function updateArticles(callback, scroll, pass) {
+  let passer = pass || true;
   let xhr = new XMLHttpRequest();
-  xhr.open("GET", "http://localhost:3000/articles/");
+  xhr.open("GET", `http://localhost:3000/articles/${scroll}`);
   xhr.send();
   xhr.onload = function() {
     let responseObj = JSON.parse(xhr.response);
+    let articles = document.querySelectorAll(".article-container");
+    articles.forEach(ele => {
+      // console.log(Number(e.firstChild.innerText));
+      responseObj.forEach(e => {
+        if (e.id === Number(ele.firstChild.innerText && !passer)) {
+          console.log("finns ju");
+          scrollLock = true;
+        }
+      });
+      // console.log(responseObj.id);
+    });
+
     if (xhr.status != 200) {
       alert(`Error ${xhr.status}: ${xhr.statusText}`);
     } else {
-      callback(responseObj);
-      console.log(responseObj);
+      callback(responseObj, update);
       let articles = document.querySelectorAll(".article-container");
       articles.forEach(e => {
         if (!dbBuffer.includes(Number(e.firstChild.innerText))) {
@@ -41,15 +63,37 @@ function updateArticles(callback) {
   };
 }
 
+function editedArticle(editedArt, oldArticleId) {
+  //check oldArticleId against the dom list id's, if true delete that dom
+  //create new article with the edited version
+  let DOMarticle = document.querySelectorAll(".article-container");
+  DOMarticle.forEach(e => {
+    if (oldArticleId === Number(e.firstChild.innerText)) {
+      e.remove();
+      return;
+    }
+  });
+  let fakeobj = [];
+
+  fakeobj.push(editedArt);
+  createArticleElement(fakeobj);
+}
 function checkArticles(dbContent) {
   dbContent.forEach(e => {
     if (dbBuffer.includes(e.id)) {
       return;
-      // let art = new obj(e.title, e.content, e.author);
-      console.log(e.id);
-      createArticleElement(art);
     } else {
-      let art = new obj(e.title, e.content, e.author);
+      // if (update) {
+      //   let oldId = e.id;
+      //   let oldarticle = document.querySelectorAll(".article-container");
+      //   oldarticle.forEach(e => {
+      //     if (oldId === Number(e.firstChild.innerText)) {
+      //       e.remove();
+      //       return;
+      //     }
+      //   });
+      // }
+      let art = new obj(e.id, e.title, e.content, e.author);
       let fakeobj = [];
       fakeobj.push(art);
       createArticleElement(fakeobj);
@@ -58,6 +102,9 @@ function checkArticles(dbContent) {
 }
 
 function createArticleElement(dbContent) {
+  if (scrollLock) {
+    return;
+  }
   dbContent.forEach(element => {
     let date = new Date(element.created).toUTCString();
     content = document.querySelector(".content");
@@ -103,6 +150,7 @@ function createArticleElement(dbContent) {
     removeArticleDiv.setAttribute("class", "article-remove fas fa-trash-alt");
     article.appendChild(removeArticleDiv);
   });
+  scrollLock = false;
 }
 
 function createInputElement(
@@ -215,16 +263,14 @@ function createInputElement(
   inputSubmitDiv.appendChild(inputSubmit);
 }
 
-function addNews(tit, cont, auth, times) {
-  times = times || 1;
-  for (let i = times; i > 0; i--) {
-    let news = new obj(tit, cont, auth);
-    let newsjson = JSON.stringify(news);
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://localhost:3000/articles/");
-    xhr.setRequestHeader("Content-type", "application/json");
-    xhr.send(newsjson);
-  }
+function addNews(tit, cont, auth) {
+  let id;
+  let news = new obj(id, tit, cont, auth);
+  let newsjson = JSON.stringify(news);
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", "http://localhost:3000/articles/");
+  xhr.setRequestHeader("Content-type", "application/json");
+  xhr.send(newsjson);
 }
 
 addbtn.addEventListener("click", e => {
@@ -259,9 +305,10 @@ container.addEventListener("click", e => {
     if (e.target.classList.contains("submit-add")) {
       addNews(inputTitle, inputContent, inputAuthor);
       inputcontainer.remove();
-      updateArticles(checkArticles);
+      updateArticles(checkArticles, "", true);
       addfailsafe = false;
     } else if (e.target.classList.contains("submit-edit")) {
+      update = true;
       let articleId = Number(e.target.parentNode.firstChild.innerText);
       let xhr = new XMLHttpRequest();
       xhr.open("GET", `http://localhost:3000/articles/`);
@@ -274,10 +321,10 @@ container.addEventListener("click", e => {
         } else {
           responseObj.forEach(e => {
             if (e.id === articleId) {
-              let news = new obj(inputTitle, inputContent, inputAuthor);
+              let news = new obj(e.id, inputTitle, inputContent, inputAuthor);
               let newsjson = JSON.stringify(news);
               let xhr = new XMLHttpRequest();
-              xhr.open("PUT", `http://localhost:3000/articles/${e.id}`);
+              xhr.open("PUT", `http://localhost:3000/articles/${articleId}`);
               xhr.setRequestHeader("Content-type", "application/json");
               xhr.send(newsjson);
               xhr.onload = function() {
@@ -285,11 +332,11 @@ container.addEventListener("click", e => {
                 if (xhr.status != 200) {
                   alert(`Error ${xhr.status}: ${xhr.statusText}`);
                 } else {
+                  editedArticle(responseObj, e.id);
                   inputcontainer.remove();
-                  updateArticles(checkArticles);
+                  // location.reload();
+                  // updateArticles(checkArticles);
                   addfailsafe = false;
-                  console.log(responseObj);
-                  console.log("success");
                 }
               };
             }
@@ -303,7 +350,6 @@ container.addEventListener("click", e => {
 container.addEventListener("click", e => {
   if (e.target.classList.contains("article-remove")) {
     let articleDom = e.target.parentNode;
-    console.log(articleDom);
     let articleId = Number(e.target.parentNode.firstChild.innerText);
     let xhr = new XMLHttpRequest();
     xhr.open("GET", "http://localhost:3000/articles/");
@@ -317,14 +363,12 @@ container.addEventListener("click", e => {
         responseObj.forEach(e => {
           if (e.id === articleId) {
             let selectedArticle = e.id;
-            console.log(selectedArticle);
             xhr.open(
               "DELETE",
               `http://localhost:3000/articles/${selectedArticle}`
             );
             xhr.send();
             xhr.onload = function() {
-              console.log(articleDom);
               articleDom.remove();
             };
           }
@@ -336,9 +380,9 @@ container.addEventListener("click", e => {
 
 container.addEventListener("click", e => {
   if (e.target.classList.contains("article-edit")) {
-    console.log("edit!");
     let firstparent = e.target.parentNode;
     let articleId = Number(firstparent.parentNode.firstChild.innerText);
+
     let xhr = new XMLHttpRequest();
     xhr.open("GET", "http://localhost:3000/articles/");
     xhr.setRequestHeader("Content-type", "application/json");
@@ -360,4 +404,18 @@ container.addEventListener("click", e => {
       });
     };
   }
+});
+
+content.addEventListener("scroll", e => {
+  // console.log(e.target.scrollHeight);
+  if (e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight) {
+    console.log("scrolled");
+    startPos = startPos + 3;
+    updateArticles(createArticleElement, `?_start=${startPos}&_limit=3`, false);
+  }
+
+  // let xhr = new XMLHttpRequest();
+  // xhr.open("GET", `http://localhost:3000/articles/?_"start=5&_limit=3"`);
+  // xhr.send();
+  // xhr.onload = function() {};
 });
