@@ -41,7 +41,10 @@ body {
   grid-area: article;
   width: 400px;
   height: 645px;
-  box-shadow: inset 0 0 10px #41595f;
+  /* border: 5px solid #c3d6db; */
+  border-radius: 10px;
+  background-color: #e6f3f5;
+  box-shadow: inset 0 0 30px #9fb7bb;
   overflow-y: scroll;
 }
 
