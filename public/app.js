@@ -3,7 +3,7 @@ let content = document.querySelector(".content");
 let addbtn = document.querySelector(".add-btn-container");
 
 let addfailsafe = false;
-let update = false;
+// let update = false;
 let scrollLock = false;
 let startPos = 1;
 
@@ -28,13 +28,19 @@ let obj = function(id, title, content, author) {
 
 updateArticles(createArticleElement, "?_limit=4");
 
-function updateArticles(callback, scroll, pass) {
-  let passer = pass || true;
+function sortArticles(array) {
+  console.log("hej");
+  array.sort();
+  console.log(array);
+}
+function updateArticles(callback, scroll, pass, generate) {
+  let passer = pass || false;
   let xhr = new XMLHttpRequest();
   xhr.open("GET", `http://localhost:3000/articles/${scroll}`);
   xhr.send();
   xhr.onload = function() {
     let responseObj = JSON.parse(xhr.response);
+    sortArticles(responseObj);
     let articles = document.querySelectorAll(".article-container");
     articles.forEach(ele => {
       responseObj.forEach(e => {
@@ -47,13 +53,29 @@ function updateArticles(callback, scroll, pass) {
     if (xhr.status != 200) {
       alert(`Error ${xhr.status}: ${xhr.statusText}`);
     } else {
-      callback(responseObj, update);
-      let articles = document.querySelectorAll(".article-container");
-      articles.forEach(e => {
-        if (!dbBuffer.includes(Number(e.firstChild.innerText))) {
-          dbBuffer.push(Number(e.firstChild.innerText));
-        }
-      });
+      if (generate) {
+        callback(responseObj, true);
+      } else {
+        callback(responseObj, false);
+      }
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET", `http://localhost:3000/articles/`);
+      xhr.send();
+      xhr.onload = function() {
+        let allObj = JSON.parse(xhr.response);
+        allObj.forEach(e => {
+          if (!dbBuffer.includes(e.id)) {
+            dbBuffer.push(e.id);
+          }
+        });
+      };
+
+      // let articles = document.querySelectorAll(".article-container");
+      // articles.forEach(e => {
+      //   if (!dbBuffer.includes(Number(e.firstChild.innerText))) {
+      //     dbBuffer.push(Number(e.firstChild.innerText));
+      //   }
+      // });
     }
   };
 }
@@ -71,11 +93,22 @@ function editedArticle(editedArt, oldArticleId) {
   fakeobj.push(editedArt);
   createArticleElement(fakeobj);
 }
+
 function checkArticles(dbContent) {
   dbContent.forEach(e => {
     if (dbBuffer.includes(e.id)) {
       return;
     } else {
+      // let articles = document.querySelectorAll(".article-container");
+      // articles.forEach(e => {
+      //   console.log(e);
+      // });
+      // let articles = document.querySelectorAll(".article-container");
+      // let add = 0;
+      // articles.forEach(e => {
+      //   add++;
+      // });
+      // if (add < 4) {
       let art = new obj(e.id, e.title, e.content, e.author);
       let fakeobj = [];
       fakeobj.push(art);
@@ -84,17 +117,25 @@ function checkArticles(dbContent) {
   });
 }
 
-function createArticleElement(dbContent) {
+function createArticleElement(dbContent, generate) {
   if (scrollLock) {
     return;
   }
   dbContent.forEach(element => {
-    let date = new Date(element.created).toUTCString();
+    let dated = new Date(element.created).toLocaleDateString();
+    datet = new Date(element.created).toLocaleTimeString();
+    date = `${dated}  (${datet})`;
     content = document.querySelector(".content");
 
     let article = document.createElement("article");
     article.setAttribute("class", "article-container");
-    content.appendChild(article);
+    if (generate) {
+      content.appendChild(article);
+    } else if (!generate) {
+      content.insertBefore(article, content.childNodes[0]);
+    }
+    // content.appendChild(article);
+    // content.insertBefore(article, content.childNodes[0]);
 
     let idTag = document.createElement("div");
     idTag.setAttribute("class", "article-id");
@@ -288,7 +329,7 @@ container.addEventListener("click", e => {
     if (e.target.classList.contains("submit-add")) {
       addNews(inputTitle, inputContent, inputAuthor);
       inputcontainer.remove();
-      updateArticles(checkArticles, "", true);
+      updateArticles(checkArticles, "", true, true);
       addfailsafe = false;
     } else if (e.target.classList.contains("submit-edit")) {
       update = true;
@@ -390,6 +431,11 @@ container.addEventListener("click", e => {
 content.addEventListener("scroll", e => {
   if (e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight) {
     startPos = startPos + 3;
-    updateArticles(createArticleElement, `?_start=${startPos}&_limit=3`, false);
+    updateArticles(
+      createArticleElement,
+      `?_start=${startPos}&_limit=3`,
+      true,
+      true
+    );
   }
 });

@@ -1,172 +1,53 @@
 {
   "articles": [
     {
-      "id": 2224838824251263,
-      "title": "Hmm",
-      "content": "hej",
-      "author": "hej",
-      "created": "Sat, 21 Sep 2019 13:54:59 GMT"
+      "id": 41448847504857360,
+      "title": "1",
+      "content": "1",
+      "author": "1",
+      "created": "Sun, 22 Sep 2019 15:40:26 GMT"
     },
     {
-      "id": 8546368731456382,
-      "title": "111",
-      "content": "11",
-      "author": "1111",
-      "created": "Sat, 21 Sep 2019 14:07:04 GMT"
+      "id": 17872934717214228,
+      "title": "2",
+      "content": "2",
+      "author": "2",
+      "created": "Sun, 22 Sep 2019 15:28:32 GMT"
     },
     {
-      "id": 8907177278867939,
-      "title": "Massa grejor",
-      "content": "hihihi",
+      "id": 2719489346574133,
+      "title": "3",
+      "content": "3",
+      "author": "3",
+      "created": "Sun, 22 Sep 2019 15:28:38 GMT"
+    },
+    {
+      "id": 28067781753988696,
+      "title": "4",
+      "content": "4",
+      "author": "4",
+      "created": "Sun, 22 Sep 2019 15:28:44 GMT"
+    },
+    {
+      "id": 1545565304513099,
+      "title": "5",
+      "content": "5",
+      "author": "5",
+      "created": "Sun, 22 Sep 2019 15:28:50 GMT"
+    },
+    {
+      "id": 2398856898020243,
+      "title": "Hej hej",
+      "content": "Ola",
+      "author": "ola",
+      "created": "Sun, 22 Sep 2019 15:32:50 GMT"
+    },
+    {
+      "id": 7344342466536036,
+      "title": "new stuff",
+      "content": "coming through",
       "author": "Ola",
-      "created": "Sat, 21 Sep 2019 14:23:16 GMT"
-    },
-    {
-      "id": 6833946370150239,
-      "title": "äänu en arty article",
-      "content": "Med bara lite content",
-      "author": "Ola",
-      "created": "Sat, 21 Sep 2019 14:28:25 GMT"
-    },
-    {
-      "id": 14286590562968592,
-      "title": "En ny artikel",
-      "content": "Hej content",
-      "author": "Ola",
-      "created": "Sat, 21 Sep 2019 14:48:32 GMT"
-    },
-    {
-      "id": 1554799767413526,
-      "title": "New news",
-      "content": "Lorem ipsum",
-      "author": "Ola",
-      "created": "Sat, 21 Sep 2019 15:06:14 GMT"
-    },
-    {
-      "id": 8667535647163243,
-      "title": "New news",
-      "content": "Lorem ipsum",
-      "author": "Ola",
-      "created": "Sat, 21 Sep 2019 15:06:27 GMT"
-    },
-    {
-      "id": 6246927525902859,
-      "title": "New news",
-      "content": "Lorem ipsum",
-      "author": "Ola",
-      "created": "Sat, 21 Sep 2019 15:06:27 GMT"
-    },
-    {
-      "id": 8187659472737241,
-      "title": "New news",
-      "content": "Lorem ipsum",
-      "author": "Ola",
-      "created": "Sat, 21 Sep 2019 15:06:27 GMT"
-    },
-    {
-      "id": 3616877079278844,
-      "title": "New news",
-      "content": "Lorem ipsum",
-      "author": "Ola",
-      "created": "Sat, 21 Sep 2019 15:06:27 GMT"
-    },
-    {
-      "id": 26097275151483412,
-      "title": "New news",
-      "content": "Lorem ipsum",
-      "author": "Ola",
-      "created": "Sat, 21 Sep 2019 15:06:28 GMT"
-    },
-    {
-      "id": 9079089739210296,
-      "title": "New news",
-      "content": "Lorem ipsum",
-      "author": "Ola",
-      "created": "Sat, 21 Sep 2019 15:06:28 GMT"
-    },
-    {
-      "id": 6734866214303472,
-      "title": "New news",
-      "content": "Lorem ipsum",
-      "author": "Ola",
-      "created": "Sat, 21 Sep 2019 15:06:28 GMT"
-    },
-    {
-      "id": 8053218769720678,
-      "title": "New news *edited",
-      "content": "Lorem ipsum\n:D",
-      "author": "Ola",
-      "created": "Sat, 21 Sep 2019 15:07:04 GMT"
-    },
-    {
-      "id": 7413163033904426,
-      "title": "New news",
-      "content": "Lorem ipsum",
-      "author": "Ola",
-      "created": "Sat, 21 Sep 2019 15:06:29 GMT"
-    },
-    {
-      "id": 3097066930453447,
-      "title": "New news",
-      "content": "Lorem ipsum",
-      "author": "Ola",
-      "created": "Sat, 21 Sep 2019 15:06:29 GMT"
-    },
-    {
-      "id": 49394128159068696,
-      "title": "New news",
-      "content": "Lorem ipsum",
-      "author": "Ola",
-      "created": "Sat, 21 Sep 2019 15:06:29 GMT"
-    },
-    {
-      "id": 371518905640736,
-      "title": "test",
-      "content": "content",
-      "author": "author",
-      "created": "Sat, 21 Sep 2019 15:06:29 GMT"
-    },
-    {
-      "id": 9029114170089208,
-      "title": "test",
-      "content": "content\n\nps. this is not a test",
-      "author": "THE author",
-      "created": "Sat, 21 Sep 2019 15:07:26 GMT"
-    },
-    {
-      "id": 9597452048027402,
-      "title": "test",
-      "content": "content",
-      "author": "author",
-      "created": "Sat, 21 Sep 2019 15:06:30 GMT"
-    },
-    {
-      "id": 7206992706839612,
-      "title": "test",
-      "content": "content",
-      "author": "author",
-      "created": "Sat, 21 Sep 2019 15:06:30 GMT"
-    },
-    {
-      "id": 6920818075923376,
-      "title": "New news",
-      "content": "Lorem ipsum",
-      "author": "Ola",
-      "created": "Sat, 21 Sep 2019 15:06:30 GMT"
-    },
-    {
-      "id": 5685667516780928,
-      "title": "New news",
-      "content": "Lorem ipsum",
-      "author": "Ola",
-      "created": "Sat, 21 Sep 2019 15:06:30 GMT"
-    },
-    {
-      "id": 4849055218671998,
-      "title": "New news",
-      "content": "Lorem ipsum",
-      "author": "Ola",
-      "created": "Sat, 21 Sep 2019 15:06:30 GMT"
+      "created": "Sun, 22 Sep 2019 16:09:59 GMT"
     }
   ]
 }
