@@ -6,6 +6,7 @@ let addfailsafe = false;
 // let update = false;
 let scrollLock = false;
 let startPos = 1;
+let hitBottom = false;
 
 let dbBuffer = [];
 
@@ -29,9 +30,9 @@ let obj = function(id, title, content, author) {
 updateArticles(createArticleElement, "?_limit=4");
 
 function sortArticles(array) {
-  console.log("hej");
-  array.sort();
-  console.log(array);
+  // console.log("hej");
+  // array.sort();
+  // console.log(array);
 }
 function updateArticles(callback, scroll, pass, generate) {
   let passer = pass || false;
@@ -103,21 +104,26 @@ function checkArticles(dbContent) {
       // articles.forEach(e => {
       //   console.log(e);
       // });
-      // let articles = document.querySelectorAll(".article-container");
-      // let add = 0;
-      // articles.forEach(e => {
-      //   add++;
-      // });
-      // if (add < 4) {
-      let art = new obj(e.id, e.title, e.content, e.author);
-      let fakeobj = [];
-      fakeobj.push(art);
-      createArticleElement(fakeobj);
+      let articles = document.querySelectorAll(".article-container");
+      let add = 0;
+      articles.forEach(e => {
+        add++;
+      });
+      if (add < 4 || hitBottom) {
+        let art = new obj(e.id, e.title, e.content, e.author);
+        let fakeobj = [];
+        fakeobj.push(art);
+        createArticleElement(fakeobj);
+      }
     }
   });
 }
 
 function createArticleElement(dbContent, generate) {
+  if (dbContent.length === 0) {
+    hitBottom = true;
+  }
+  generate = true;
   if (scrollLock) {
     return;
   }
@@ -429,6 +435,9 @@ container.addEventListener("click", e => {
 });
 
 content.addEventListener("scroll", e => {
+  if (hitBottom) {
+    return;
+  }
   if (e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight) {
     startPos = startPos + 3;
     updateArticles(
