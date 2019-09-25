@@ -25,6 +25,7 @@ body {
     ". article ."
     ". . addbtn";
   text-align: center;
+  background-color: #e6f3f5;
 }
 
 .news {
@@ -44,9 +45,10 @@ body {
   width: 400px;
   height: 645px;
   /* border: 5px solid #c3d6db; */
+  border: solid 5px #b3cbcf80;
   border-radius: 10px;
   background-color: #e6f3f5;
-  box-shadow: inset 0 0 30px #9fb7bb;
+  box-shadow: inset 0 0 30px #9fb7bb80;
   overflow-y: scroll;
 }
 

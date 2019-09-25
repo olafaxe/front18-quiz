@@ -1,16 +1,24 @@
+//******Importsers*****//
+//*********************//
+
+// import { articleLog } from "/articleUtils.js";
+
+//****Queryselectors***//
+//*********************//
 let container = document.querySelector(".container");
 let content = document.querySelector(".content");
 let addbtn = document.querySelector(".add-btn-container");
 
+//Global variables checks
+//*********************//
+
 let addfailsafe = false;
-// let update = false;
 let scrollLock = false;
 let startPos = 1;
 let hitBottom = false;
-
 let dbBuffer = [];
 
-let obj = function(id, title, content, author) {
+let articleObj = function(id, title, content, author) {
   if (typeof id === "undefined") {
     this.id = Number(
       Math.random()
@@ -24,24 +32,23 @@ let obj = function(id, title, content, author) {
   this.title = title;
   this.content = content;
   this.author = author;
-  this.created = new Date().toUTCString();
+  this.created = new Date();
 };
 
-updateArticles(createArticleElement, "?_limit=4");
+//on start-up function
+updateArticles(articleHandler, "?_limit=4");
 
-function sortArticles(array) {
-  // console.log("hej");
-  // array.sort();
-  // console.log(array);
-}
+//****FUNCTIONS****//
+//*****************//
+
 function updateArticles(callback, scroll, pass, generate) {
   let passer = pass || false;
+
   let xhr = new XMLHttpRequest();
   xhr.open("GET", `http://localhost:3000/articles/${scroll}`);
   xhr.send();
   xhr.onload = function() {
     let responseObj = JSON.parse(xhr.response);
-    sortArticles(responseObj);
     let articles = document.querySelectorAll(".article-container");
     articles.forEach(ele => {
       responseObj.forEach(e => {
@@ -59,29 +66,33 @@ function updateArticles(callback, scroll, pass, generate) {
       } else {
         callback(responseObj, false);
       }
-      let xhr = new XMLHttpRequest();
-      xhr.open("GET", `http://localhost:3000/articles/`);
-      xhr.send();
-      xhr.onload = function() {
-        let allObj = JSON.parse(xhr.response);
-        allObj.forEach(e => {
-          if (!dbBuffer.includes(e.id)) {
-            dbBuffer.push(e.id);
-          }
-        });
-      };
 
-      // let articles = document.querySelectorAll(".article-container");
-      // articles.forEach(e => {
-      //   if (!dbBuffer.includes(Number(e.firstChild.innerText))) {
-      //     dbBuffer.push(Number(e.firstChild.innerText));
-      //   }
-      // });
+      fetch("http://localhost:3000/articles/")
+        .then(res => res.json())
+        .then(articles =>
+          articles.forEach(article => {
+            if (!dbBuffer.includes(article.id)) {
+              dbBuffer.push(article.id);
+            }
+          })
+        );
     }
   };
 }
 
-function editedArticle(editedArt, oldArticleId) {
+// let xhr = new XMLHttpRequest();
+// xhr.open("GET", `http://localhost:3000/articles/`);
+// xhr.send();
+// xhr.onload = function() {
+//   let allObj = JSON.parse(xhr.response);
+//   allObj.forEach(e => {
+//     if (!dbBuffer.includes(e.id)) {
+//       dbBuffer.push(e.id);
+//     }
+//   });
+// };
+
+function editArticle(editedArt, oldArticleId) {
   let DOMarticle = document.querySelectorAll(".article-container");
   DOMarticle.forEach(e => {
     if (oldArticleId === Number(e.firstChild.innerText)) {
@@ -92,7 +103,7 @@ function editedArticle(editedArt, oldArticleId) {
   let fakeobj = [];
 
   fakeobj.push(editedArt);
-  createArticleElement(fakeobj);
+  articleHandler(fakeobj);
 }
 
 function checkArticles(dbContent) {
@@ -100,26 +111,201 @@ function checkArticles(dbContent) {
     if (dbBuffer.includes(e.id)) {
       return;
     } else {
-      // let articles = document.querySelectorAll(".article-container");
-      // articles.forEach(e => {
-      //   console.log(e);
-      // });
       let articles = document.querySelectorAll(".article-container");
       let add = 0;
       articles.forEach(e => {
         add++;
       });
       if (add < 4 || hitBottom) {
-        let art = new obj(e.id, e.title, e.content, e.author);
+        let art = new articleObj(e.id, e.title, e.content, e.author);
         let fakeobj = [];
         fakeobj.push(art);
-        createArticleElement(fakeobj);
+        articleHandler(fakeobj);
       }
     }
   });
 }
 
-function createArticleElement(dbContent, generate) {
+function addNews(tit, cont, auth) {
+  let id;
+  let news = new articleObj(id, tit, cont, auth);
+  let newsjson = JSON.stringify(news);
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", "http://localhost:3000/articles/");
+  xhr.setRequestHeader("Content-type", "application/json");
+  xhr.send(newsjson);
+}
+
+//****EVENT LISTENERS****//
+//***********************//
+
+addbtn.addEventListener("click", e => {
+  addbtn.classList.add("click");
+  setTimeout(() => {
+    addbtn.classList.remove("click");
+  }, 500);
+  if (addfailsafe === false) {
+    let articleId;
+    formHandler(articleId, "Make News!", "Boom! News.", "submit-add");
+    addfailsafe = true;
+  } else {
+    return;
+  }
+});
+
+container.addEventListener("click", e => {
+  let inputcontainer = document.querySelector(".input-container");
+  if (e.target.classList.contains("input-close")) {
+    inputcontainer.remove();
+    addfailsafe = false;
+  }
+});
+
+container.addEventListener("click", e => {
+  //Get values from form inputs
+  if (e.target.classList.contains("input-submit")) {
+    let inputcontainer = document.querySelector(".input-container");
+    let inputTitle = document.querySelector(".input-title").value;
+    let inputContent = document.querySelector(".input-content").value;
+    let inputAuthor = document.querySelector(".input-author").value;
+    event.preventDefault();
+    //when submit, if making new article do this
+    if (e.target.classList.contains("submit-add")) {
+      addNews(inputTitle, inputContent, inputAuthor);
+      inputcontainer.remove();
+      updateArticles(checkArticles, "", true, true);
+      addfailsafe = false;
+    }
+    //when submit, if edit article do this
+    else if (e.target.classList.contains("submit-edit")) {
+      let update = true;
+      let articleId = Number(e.target.parentNode.firstChild.innerText);
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET", `http://localhost:3000/articles/`);
+      xhr.setRequestHeader("Content-type", "application/json");
+      xhr.send();
+      xhr.onload = function() {
+        let responseObj = JSON.parse(xhr.response);
+        if (xhr.status != 200) {
+          alert(`Error ${xhr.status}: ${xhr.statusText}`);
+        } else {
+          responseObj.forEach(e => {
+            if (e.id === articleId) {
+              let news = new articleObj(
+                e.id,
+                inputTitle,
+                inputContent,
+                inputAuthor
+              );
+              let newsjson = JSON.stringify(news);
+              let xhr = new XMLHttpRequest();
+              xhr.open("PUT", `http://localhost:3000/articles/${articleId}`);
+              xhr.setRequestHeader("Content-type", "application/json");
+              xhr.send(newsjson);
+              xhr.onload = function() {
+                let responseObj = JSON.parse(xhr.response);
+                if (xhr.status != 200) {
+                  alert(`Error ${xhr.status}: ${xhr.statusText}`);
+                } else {
+                  editArticle(responseObj, e.id);
+                  inputcontainer.remove();
+                  addfailsafe = false;
+                }
+              };
+            }
+          });
+        }
+      };
+    }
+  }
+});
+
+container.addEventListener("click", e => {
+  if (e.target.classList.contains("article-remove")) {
+    let articleDom = e.target.parentNode;
+    let articleId = Number(e.target.parentNode.firstChild.innerText);
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://localhost:3000/articles/");
+    xhr.setRequestHeader("Content-type", "application/json");
+    xhr.send();
+    xhr.onload = function() {
+      let responseObj = JSON.parse(xhr.response);
+      if (xhr.status != 200) {
+        alert(`Error ${xhr.status}: ${xhr.statusText}`);
+      } else {
+        responseObj.forEach(e => {
+          if (e.id === articleId) {
+            let selectedArticle = e.id;
+            xhr.open(
+              "DELETE",
+              `http://localhost:3000/articles/${selectedArticle}`
+            );
+            xhr.send();
+            xhr.onload = function() {
+              articleDom.remove();
+              let articles = document.querySelectorAll(".article-container");
+              let add = 0;
+              articles.forEach(e => {
+                add++;
+              });
+              if (add < 4) {
+                updateArticles(
+                  articleHandler,
+                  `?_start=${startPos}&_limit=3`,
+                  true,
+                  true
+                );
+              }
+            };
+          }
+        });
+      }
+    };
+  }
+});
+
+container.addEventListener("click", e => {
+  if (e.target.classList.contains("article-edit")) {
+    let firstparent = e.target.parentNode;
+    let articleId = Number(firstparent.parentNode.firstChild.innerText);
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://localhost:3000/articles/");
+    xhr.setRequestHeader("Content-type", "application/json");
+    xhr.send();
+    xhr.onload = function() {
+      let responseObj = JSON.parse(xhr.response);
+      responseObj.forEach(e => {
+        if (e.id === articleId) {
+          formHandler(
+            articleId,
+            "Edit News!",
+            "Boom! Edited.",
+            "submit-edit",
+            e.title,
+            e.content,
+            e.author
+          );
+        }
+      });
+    };
+  }
+});
+
+content.addEventListener("scroll", e => {
+  if (hitBottom) {
+    return;
+  }
+  if (e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight) {
+    startPos = startPos + 3;
+    updateArticles(articleHandler, `?_start=${startPos}&_limit=3`, true, true);
+  }
+});
+
+//****CREATION FUNCTIONS****//
+//**************************//
+
+function articleHandler(dbContent, generate) {
   if (dbContent.length === 0) {
     hitBottom = true;
   }
@@ -129,20 +315,18 @@ function createArticleElement(dbContent, generate) {
   }
   dbContent.forEach(element => {
     let dated = new Date(element.created).toLocaleDateString();
-    datet = new Date(element.created).toLocaleTimeString();
-    date = `${dated}  (${datet})`;
+    let datet = new Date(element.created).toLocaleTimeString();
+    let date = `${dated}  (${datet})`;
     content = document.querySelector(".content");
 
     let article = document.createElement("article");
     article.setAttribute("class", "article-container");
     if (generate) {
       content.appendChild(article);
-    } else if (!generate) {
-      content.insertBefore(article, content.childNodes[0]);
     }
-    // content.appendChild(article);
-    // content.insertBefore(article, content.childNodes[0]);
-
+    // else if (!generate) {
+    //   content.insertBefore(article, content.childNodes[0]);
+    // }
     let idTag = document.createElement("div");
     idTag.setAttribute("class", "article-id");
     idTag.innerText = element.id;
@@ -183,7 +367,7 @@ function createArticleElement(dbContent, generate) {
   scrollLock = false;
 }
 
-function createInputElement(
+function formHandler(
   articleId,
   type,
   btnName,
@@ -292,159 +476,3 @@ function createInputElement(
   inputSubmit.innerText = btnName;
   inputSubmitDiv.appendChild(inputSubmit);
 }
-
-function addNews(tit, cont, auth) {
-  let id;
-  let news = new obj(id, tit, cont, auth);
-  let newsjson = JSON.stringify(news);
-  let xhr = new XMLHttpRequest();
-  xhr.open("POST", "http://localhost:3000/articles/");
-  xhr.setRequestHeader("Content-type", "application/json");
-  xhr.send(newsjson);
-}
-
-addbtn.addEventListener("click", e => {
-  addbtn.classList.add("click");
-  setTimeout(() => {
-    addbtn.classList.remove("click");
-  }, 500);
-  if (addfailsafe === false) {
-    let articleId;
-    createInputElement(articleId, "Make News!", "Boom! News.", "submit-add");
-    addfailsafe = true;
-  } else {
-    return;
-  }
-});
-
-container.addEventListener("click", e => {
-  let inputcontainer = document.querySelector(".input-container");
-  if (e.target.classList.contains("input-close")) {
-    inputcontainer.remove();
-    addfailsafe = false;
-  }
-});
-
-container.addEventListener("click", e => {
-  if (e.target.classList.contains("input-submit")) {
-    let inputcontainer = document.querySelector(".input-container");
-    let inputTitle = document.querySelector(".input-title").value;
-    let inputContent = document.querySelector(".input-content").value;
-    let inputAuthor = document.querySelector(".input-author").value;
-    event.preventDefault();
-    if (e.target.classList.contains("submit-add")) {
-      addNews(inputTitle, inputContent, inputAuthor);
-      inputcontainer.remove();
-      updateArticles(checkArticles, "", true, true);
-      addfailsafe = false;
-    } else if (e.target.classList.contains("submit-edit")) {
-      update = true;
-      let articleId = Number(e.target.parentNode.firstChild.innerText);
-      let xhr = new XMLHttpRequest();
-      xhr.open("GET", `http://localhost:3000/articles/`);
-      xhr.setRequestHeader("Content-type", "application/json");
-      xhr.send();
-      xhr.onload = function() {
-        let responseObj = JSON.parse(xhr.response);
-        if (xhr.status != 200) {
-          alert(`Error ${xhr.status}: ${xhr.statusText}`);
-        } else {
-          responseObj.forEach(e => {
-            if (e.id === articleId) {
-              let news = new obj(e.id, inputTitle, inputContent, inputAuthor);
-              let newsjson = JSON.stringify(news);
-              let xhr = new XMLHttpRequest();
-              xhr.open("PUT", `http://localhost:3000/articles/${articleId}`);
-              xhr.setRequestHeader("Content-type", "application/json");
-              xhr.send(newsjson);
-              xhr.onload = function() {
-                let responseObj = JSON.parse(xhr.response);
-                if (xhr.status != 200) {
-                  alert(`Error ${xhr.status}: ${xhr.statusText}`);
-                } else {
-                  editedArticle(responseObj, e.id);
-                  inputcontainer.remove();
-                  addfailsafe = false;
-                }
-              };
-            }
-          });
-        }
-      };
-    }
-  }
-});
-
-container.addEventListener("click", e => {
-  if (e.target.classList.contains("article-remove")) {
-    let articleDom = e.target.parentNode;
-    let articleId = Number(e.target.parentNode.firstChild.innerText);
-    let xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost:3000/articles/");
-    xhr.setRequestHeader("Content-type", "application/json");
-    xhr.send();
-    xhr.onload = function() {
-      let responseObj = JSON.parse(xhr.response);
-      if (xhr.status != 200) {
-        alert(`Error ${xhr.status}: ${xhr.statusText}`);
-      } else {
-        responseObj.forEach(e => {
-          if (e.id === articleId) {
-            let selectedArticle = e.id;
-            xhr.open(
-              "DELETE",
-              `http://localhost:3000/articles/${selectedArticle}`
-            );
-            xhr.send();
-            xhr.onload = function() {
-              articleDom.remove();
-            };
-          }
-        });
-      }
-    };
-  }
-});
-
-container.addEventListener("click", e => {
-  if (e.target.classList.contains("article-edit")) {
-    let firstparent = e.target.parentNode;
-    let articleId = Number(firstparent.parentNode.firstChild.innerText);
-
-    let xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost:3000/articles/");
-    xhr.setRequestHeader("Content-type", "application/json");
-    xhr.send();
-    xhr.onload = function() {
-      let responseObj = JSON.parse(xhr.response);
-      responseObj.forEach(e => {
-        if (e.id === articleId) {
-          createInputElement(
-            articleId,
-            "Edit News!",
-            "Boom! Edited.",
-            "submit-edit",
-            e.title,
-            e.content,
-            e.author
-          );
-        }
-      });
-    };
-  }
-});
-
-content.addEventListener("scroll", e => {
-  if (hitBottom) {
-    return;
-  }
-  if (e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight) {
-    startPos = startPos + 3;
-    updateArticles(
-      createArticleElement,
-      `?_start=${startPos}&_limit=3`,
-      true,
-      true
-    );
-  }
-});

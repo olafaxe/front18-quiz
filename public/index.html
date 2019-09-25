@@ -8,12 +8,14 @@
       window.onload = () => {
         let scripts = [
           {
-            script: "/app.js"
+            script: "/app.js",
+            type: "module"
           }
         ];
         scripts.forEach(e => {
           let scripttag = document.createElement("script");
           scripttag.setAttribute("src", e.script);
+          scripttag.setAttribute("type", e.type);
           document.head.appendChild(scripttag);
         });
       };
