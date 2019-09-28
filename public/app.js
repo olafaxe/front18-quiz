@@ -39,7 +39,7 @@ function updateArticles(callback, scroll, pass, generate) {
   let passer = pass || false;
 
   let xhr = new XMLHttpRequest();
-  xhr.open("GET", `http://localhost:3000/articles/${scroll}`);
+  xhr.open("GET", `/articles/${scroll}`);
   xhr.send();
   xhr.onload = function() {
     let responseObj = JSON.parse(xhr.response);
@@ -61,7 +61,7 @@ function updateArticles(callback, scroll, pass, generate) {
         callback(responseObj, false, scrollLock);
       }
 
-      fetch("http://localhost:3000/articles/")
+      fetch("/articles")
         .then(res => res.json())
         .then(articles =>
           articles.forEach(article => {
@@ -114,7 +114,7 @@ function addNews(tit, cont, auth) {
   let news = new articleObj(id, tit, cont, auth);
   let newsjson = JSON.stringify(news);
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "http://localhost:3000/articles/");
+  xhr.open("POST", "/articles/");
   xhr.setRequestHeader("Content-type", "application/json");
   xhr.send(newsjson);
 }
@@ -164,7 +164,7 @@ container.addEventListener("click", e => {
       let update = true;
       let articleId = Number(e.target.parentNode.firstChild.innerText);
       let xhr = new XMLHttpRequest();
-      xhr.open("GET", `http://localhost:3000/articles/`);
+      xhr.open("GET", `/articles/`);
       xhr.setRequestHeader("Content-type", "application/json");
       xhr.send();
       xhr.onload = function() {
@@ -182,7 +182,7 @@ container.addEventListener("click", e => {
               );
               let newsjson = JSON.stringify(news);
               let xhr = new XMLHttpRequest();
-              xhr.open("PUT", `http://localhost:3000/articles/${articleId}`);
+              xhr.open("PUT", `/articles/${articleId}`);
               xhr.setRequestHeader("Content-type", "application/json");
               xhr.send(newsjson);
               xhr.onload = function() {
@@ -208,7 +208,7 @@ container.addEventListener("click", e => {
     let articleDom = e.target.parentNode;
     let articleId = Number(e.target.parentNode.firstChild.innerText);
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost:3000/articles/");
+    xhr.open("GET", "/articles/");
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.send();
     xhr.onload = function() {
@@ -219,10 +219,7 @@ container.addEventListener("click", e => {
         responseObj.forEach(e => {
           if (e.id === articleId) {
             let selectedArticle = e.id;
-            xhr.open(
-              "DELETE",
-              `http://localhost:3000/articles/${selectedArticle}`
-            );
+            xhr.open("DELETE", `/articles/${selectedArticle}`);
             xhr.send();
             xhr.onload = function() {
               articleDom.remove();
@@ -253,7 +250,7 @@ container.addEventListener("click", e => {
     let articleId = Number(firstparent.parentNode.firstChild.innerText);
 
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost:3000/articles/");
+    xhr.open("GET", "/articles/");
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.send();
     xhr.onload = function() {
