@@ -141,16 +141,19 @@ body {
   font-weight: bold;
   font-family: courier;
   color: white;
+  margin: auto;
 }
 
 .input-container {
   grid-area: input;
+  background-color: #668a94;
   display: flex;
   flex-direction: column;
   margin-top: 5px;
   margin-bottom: 30px;
   margin-right: 5%;
   width: 100%;
+  color: #f8f8f8;
 }
 
 .input-fieldset {
@@ -180,4 +183,63 @@ body {
 .article-edit {
   margin-top: 5px;
   margin-right: 3px;
+}
+@media screen and (max-width: 685px) {
+  .container {
+    grid-template-areas:
+      " . news ."
+      ". article ."
+      ". article ."
+      ". article addbtn";
+  }
+  .input-container {
+    grid-area: article;
+
+    /* display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    margin-right: 5%;
+    width: 100%; */
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .container {
+    grid-auto-rows: 55px 1fr 1fr 125px;
+  }
+
+  .content {
+    width: 300px;
+    height: 500px;
+  }
+  .add-btn-container {
+    width: 125px;
+    height: 125px;
+  }
+  .add-btn {
+    width: 125px;
+    height: 125px;
+  }
+
+  .article-container {
+    width: 255px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .container {
+    grid-template-areas:
+      " . news ."
+      ". article input"
+      ". article ."
+      "addbtn addbtn addbtn";
+  }
+  .add-btn-container {
+    width: 100%;
+  }
+  .add-btn {
+    width: 100%;
+  }
 }
