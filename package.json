@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/olafaxe/json-news#readme",
   "dependencies": {
+    "force-secure-express": "^1.0.1",
     "json-server": "^0.12.1"
   }
 }
