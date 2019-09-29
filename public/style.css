@@ -244,4 +244,16 @@ body {
   .add-btn {
     width: 100%;
   }
+  .content {
+    width: 340px;
+    height: 435px;
+  }
+  .article-container {
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .content {
+    width: 300px;
+  }
 }
