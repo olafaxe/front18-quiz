@@ -281,3 +281,13 @@ content.addEventListener("scroll", e => {
     updateArticles(articleHandler, `?_start=${startPos}&_limit=3`, true, true);
   }
 });
+
+content.addEventListener("touchmove", e => {
+  if (hitBottom) {
+    return;
+  }
+  if (e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight) {
+    startPos = startPos + 3;
+    updateArticles(articleHandler, `?_start=${startPos}&_limit=3`, true, true);
+  }
+});
