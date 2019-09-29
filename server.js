@@ -5,9 +5,7 @@ const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 const port = process.env.PORT || 5000;
 
-server.use(
-  forceSecure(["example.com", "http://news-of-yesterday.herokuapp.com/"])
-);
+server.use(forceSecure(["example.com", "news-of-yesterday.herokuapp.com"]));
 
 server.use(middlewares);
 server.use(router);
