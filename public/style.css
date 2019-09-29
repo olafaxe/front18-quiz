@@ -121,6 +121,7 @@ body {
   grid-row-end: 4;
   display: flex;
   flex-direction: column-reverse;
+  z-index: 99;
 }
 .add-btn {
   display: flex;
