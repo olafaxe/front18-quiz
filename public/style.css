@@ -182,6 +182,10 @@ body {
   resize: none;
 }
 
+.input-answer {
+  resize: none;
+}
+
 .article-upper {
   display: flex;
 }
