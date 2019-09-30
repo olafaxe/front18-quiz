@@ -55,7 +55,7 @@ export function articleHandler(dbContent, generate, scrollLock) {
     createdTag.setAttribute("class", "article-created");
     article.appendChild(createdTag);
 
-    let contentTag = document.createElement("p");
+    let contentTag = document.createElement("h3");
     contentTag.innerText = element.content;
     contentTag.setAttribute("class", "article-content");
     article.appendChild(contentTag);
@@ -66,7 +66,7 @@ export function articleHandler(dbContent, generate, scrollLock) {
     showAnswer.setAttribute("value", "SHOW ANSWER");
     article.appendChild(showAnswer);
 
-    let contentAnswerTag = document.createElement("p");
+    let contentAnswerTag = document.createElement("h3");
     contentAnswerTag.innerText = element.answer;
     contentAnswerTag.setAttribute(
       "class",
@@ -92,9 +92,9 @@ export function formHandler(
   authDef
 ) {
   let defaultTitle = titDef || "";
-  let defaultContent = contDef || "";
+  let defaultContent = contDef || "EXPLAIN! (ノಠ益ಠ)ノ";
   let defaultAnswer = ansDef || "No answer yet!";
-  let defaultAuthor = authDef || "";
+  let defaultAuthor = authDef || "El Presidente";
 
   let inputcontainer = document.createElement("div");
   inputcontainer.setAttribute("class", "input-container");

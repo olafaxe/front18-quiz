@@ -128,7 +128,14 @@ window.addEventListener("click", e => {
     let button = e.target;
     let answer = button.nextSibling;
     answer.classList.toggle("display-none");
-    button.classList.toggle("display-none");
+    button.classList.toggle("hide");
+    if (button.classList.contains("hide")) {
+      button.style.backgroundColor = "#bd4646";
+      button.value = "HIDE ANSWER";
+    } else {
+      button.style.backgroundColor = "#2bb52b";
+      button.value = "SHOW ANSWER";
+    }
   }
 });
 

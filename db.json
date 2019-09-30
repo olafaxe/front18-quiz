@@ -1,3 +1,1116 @@
 {
-  "articles": []
+  "articles": [
+    {
+      "id": 669319369904777,
+      "title": "There are three (3) different ways to declare a variable i JavaScript.",
+      "content": "Write a small code example for each one\nExplain the difference between them",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T17:58:47.798Z"
+    },
+    {
+      "id": 840432891842289,
+      "title": "What is printed to the console?",
+      "content": "var x = 37;\nvar y = x + \"7\";\nvar z = x - \"7\";\n\nconsole.log(y);\nconsole.log(z);",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T17:59:12.196Z"
+    },
+    {
+      "id": 1350680322291269,
+      "title": "What is printed to the console?",
+      "content": "var a = 1;\nvar b = 2;\n\nfunction foo() {\n    var a = 10;\n    b = 20;\n}\n\nfoo();\n\nconsole.log(a);\nconsole.log(b);",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T17:59:36.763Z"
+    },
+    {
+      "id": 47356587988700010,
+      "title": "What is hoisting?",
+      "content": "EXPLAIN (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:00:37.722Z"
+    },
+    {
+      "id": 25454932873802190,
+      "title": "What is printed to the console?",
+      "content": "var a = 1;\nvar b = \"hej\";\nvar c = false;\nvar d = [\"Rey\", \"Kylo\"];\nvar e = { age: 12 };\nvar f = function () { }\n\nconsole.log(typeof a);\nconsole.log(typeof b);\nconsole.log(typeof c);\nconsole.log(typeof d);\nconsole.log(typeof e);\nconsole.log(typeof f);",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:01:11.781Z"
+    },
+    {
+      "id": 6867904147166646,
+      "title": "What is printed to the console?",
+      "content": "var a = null;\nconsole.log(a);\nconsole.log(typeof a);\n\nvar b;\nconsole.log(b);\nconsole.log(typeof b);",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:01:33.989Z"
+    },
+    {
+      "id": 9145552643491048,
+      "title": "What is the global object in a browser environment?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:01:45.268Z"
+    },
+    {
+      "id": 9052321988757320,
+      "title": "There are two (2) different ways to define a function in JavaScript.",
+      "content": "Write a small code example for each one\nExplain the difference between them",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:02:15.172Z"
+    },
+    {
+      "id": 7424172926160488,
+      "title": "What is function scope?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:02:24.118Z"
+    },
+    {
+      "id": 18388623528906356,
+      "title": "Name two functions that are built into the JavaScript language!",
+      "content": "ANSWER ME! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:02:38.985Z"
+    },
+    {
+      "id": 5555887550258161,
+      "title": "What is an arrow function?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:02:48.688Z"
+    },
+    {
+      "id": 8219170759861032,
+      "title": "There are two (2) different notations for accessing (object) properties in JavaScript.",
+      "content": "Write a small code example for each one\nExplain the difference between them",
+      "answer": "No answer yet!",
+      "author": "No answer yet!",
+      "created": "2019-09-30T18:03:13.232Z"
+    },
+    {
+      "id": 525240485166395,
+      "title": "There are three (3) different ways to create objects in JavaScript.",
+      "content": "Write a small code example for each one",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:03:31.050Z"
+    },
+    {
+      "id": 4021978726779367,
+      "title": "Translate these words into English and explain what they mean!",
+      "content": "Tilldela\nInitialisera\nDeklarera",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:03:57.715Z"
+    },
+    {
+      "id": 3752434602119621,
+      "title": "Code should be easy to understand. Why is that important?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:04:17.701Z"
+    },
+    {
+      "id": 6909913216450005,
+      "title": "What is printed to the console?",
+      "content": "const TIMEOUT = 60;\n\nif (TIMEOUT < 120) {\n    let a = true;\n    var b = 10;\n}\n\nconsole.log(typeof a);\nconsole.log(typeof b);",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:04:41.148Z"
+    },
+    {
+      "id": 6714685872647373,
+      "title": "camel / pascal",
+      "content": "What is the difference between camel case and pascal case?\nIn JavaScript, should you use camel case or pascal case? Why?",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:05:00.386Z"
+    },
+    {
+      "id": 6779877383014304,
+      "title": "What is the difference between a dynamic programming language and a static programming language?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:05:10.762Z"
+    },
+    {
+      "id": 2707375366935124,
+      "title": "Type conversion",
+      "content": "What is implicit type conversion? Explain and exemplify with a code snippet.\nWhat is explicit type conversion? Explain and exemplify with a code snippet.\n",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:05:30.144Z"
+    },
+    {
+      "id": 26913541670203370,
+      "title": "What is printed to the console? Why?",
+      "content": "let a = '';\nlet b = 0;\n\nif (a == b) {\n    console.log('equal');\n} else {\n    console.log('different');\n}",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:05:47.696Z"
+    },
+    {
+      "id": 9410905672347624,
+      "title": "What is printed to the console? Why?",
+      "content": "let a = '0';\nlet b = 0;\n\nif (Boolean(a) == Boolean(b)) {\n    console.log('equal');\n} else {\n    console.log('different');\n}",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:06:09.765Z"
+    },
+    {
+      "id": 15539742241400668,
+      "title": "What is printed to the console? Why?",
+      "content": "let a = Number(2 > 1) + '1';\nconsole.log(a);",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:06:25.175Z"
+    },
+    {
+      "id": 3551649452855321,
+      "title": "What is printed to the console? Why?",
+      "content": "let a = 1, b = 1;\n\nlet c = ++a;\nlet d = b++;\n\nconsole.log(a);\nconsole.log(b);\nconsole.log(c);\nconsole.log(d);",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:06:42.939Z"
+    },
+    {
+      "id": 14910343908988032,
+      "title": "What is printed to the console? Why?",
+      "content": "let x = 1;\nlet y = '1';\n\nif (x === y) {\n    console.log('very equal');\n} else {\n    console.log('different');\n}",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:07:03.642Z"
+    },
+    {
+      "id": 29704495202593184,
+      "title": "What will be printed to the console? Explain!",
+      "content": "let a = 1;\nlet b = [1];\n\nfunction A(x) { x = 2; }\nfunction B(x) { x[0] = 2; }\n\nA(a);\nB(b);\n\nconsole.log(a);\nconsole.log(b[0]);",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:08:03.946Z"
+    },
+    {
+      "id": 8328813495618592,
+      "title": "Explain the difference between a value type and a reference type!",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:08:19.101Z"
+    },
+    {
+      "id": 24128537342816104,
+      "title": "What will be printed to the console? Explain!",
+      "content": "const num = 1;\nnum = 2;\nconsole.log(num);",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:08:36.064Z"
+    },
+    {
+      "id": 7426556604734003,
+      "title": "What will be printed to the console? Explain!",
+      "content": "const obj = { size: 1 };\nobj.size = 2;\nconsole.log(obj.size);",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:09:23.406Z"
+    },
+    {
+      "id": 9639595294566194,
+      "title": "What is the difference between let and const? Explain!",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:09:48.515Z"
+    },
+    {
+      "id": 8321250264610891,
+      "title": "Study the code below.",
+      "content": "How many function calls are there in total?\nHow many arguments are passed in each function call?\nWhat are the types of the arguments in each function call?\nWhat will be printed to the console?\n\nsetTimeout(() => {\n    let a = 1;\n    console.log(foo(a));\n}, 0);\n\nconst foo = x => x + 1;",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:10:02.172Z"
+    },
+    {
+      "id": 9905621844525080,
+      "title": "What will be printed to the console? Explain!",
+      "content": "function foo(x) {\n    var message = '';\n    if (x < 20)\n        message = 'Less than 20';\n        return message;\n    if (x < 10)\n        message = 'Less than 10';\n        return message;\n}\nlet num = 5;\nlet msg = foo(num);\nconsole.log(msg);",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:10:19.319Z"
+    },
+    {
+      "id": 712981232054583,
+      "title": "What is “compound learning”?",
+      "content": "I'LL COMPOUND YOU IF U NO ANSWER!\n(ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "No answer yet!",
+      "created": "2019-09-30T18:11:35.780Z"
+    },
+    {
+      "id": 7775406617783531,
+      "title": "What is the single most important quality you would want in a coworker? Why?",
+      "content": "\"Be like Ola\" IS NOT AN ANSWER\n(ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:11:26.732Z"
+    },
+    {
+      "id": 3780625511775051,
+      "title": "Default parameter values can be implemented in two different ways in JavaScript. Describe those two ways, and illustrate your answer with two code snippets!",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:11:53.566Z"
+    },
+    {
+      "id": 5413599472075167,
+      "title": "What is a “pure function”?",
+      "content": "GOTTA BE PURE! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:12:19.391Z"
+    },
+    {
+      "id": 5902358709830468,
+      "title": "Is this function pure?",
+      "content": "function increment(x) {\n    x++;\n    return x;\n}",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:12:39.616Z"
+    },
+    {
+      "id": 7230750740555034,
+      "title": "What will be printed to the console?",
+      "content": "function bar(x) {\n    console.log(x);\n    console.log(arguments[0]);\n}\n\nbar(1, 2, 3);",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:13:01.401Z"
+    },
+    {
+      "id": 5249545172410444,
+      "title": "What will be printed to the console? Explain how the code works!",
+      "content": "function foo(a, b) {\n    return a.filter(b);\n}\n\nvar x = ['Äpple', 'Banan', 'Apelsin'];\nvar y = foo(x, i => i.includes('n'));\n\nconsole.log(y);",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:13:42.602Z"
+    },
+    {
+      "id": 4055053269165393,
+      "title": "Study the function below!",
+      "content": "What does the function do? Explain!\nWhat would be a better name for the function?\n\nfunction bar(a, b) {\n    let n = 0;\n    for (let i = 0; i < a.length; i++) {\n        if (b(a[i])) n++;\n    }\n    return n;\n}\n",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:14:02.443Z"
+    },
+    {
+      "id": 3434686432039975,
+      "title": "What will be printed to the console? Explain!",
+      "content": "function a() {\n    fs.readFile('a.txt', (e, d) => {\n        console.log('a');\n    });\n}\n\nfunction b() {\n    fs.readFile('b.txt', (e, d) => {\n        console.log('b');\n    });\n}\n\nfunction c() {\n    console.log('c');\n}\n\na();\nb();\nc();",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:14:27.854Z"
+    },
+    {
+      "id": 2068824520695426,
+      "title": "What is a callback function?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:14:38.114Z"
+    },
+    {
+      "id": 1759456911621633,
+      "title": "In what situations would you use a callback function?",
+      "content": "ANSWER! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:14:52.676Z"
+    },
+    {
+      "id": 3940504241248679,
+      "title": "What is Node.js?",
+      "content": "What can Node.js be used for? Give a couple of examples!",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:15:07.245Z"
+    },
+    {
+      "id": 7880630102977114,
+      "title": "What will be printed to the console?",
+      "content": "function foo() {\n    const inner = () => {\n        return 14;\n    }\n\n    return inner;\n}\n\nlet x = foo();\nconsole.log(typeof x);",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:15:26.587Z"
+    },
+    {
+      "id": 2329765213364724,
+      "title": "What is the difference between synchronous code and asynchronous code!",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:15:40.881Z"
+    },
+    {
+      "id": 2711274973548141,
+      "title": "Is this function pure? If not, how could we make it pure?",
+      "content": "function logLogin(user) {\n    let message = 'User ' + user + ' logged in';\n    console.log(message);\n}",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:16:05.050Z"
+    },
+    {
+      "id": 8142515474552664,
+      "title": "You should not change the DOM on the scroll event, because it can make the browser slow and unresponsive. Why is that?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:16:28.113Z"
+    },
+    {
+      "id": 768354811460095,
+      "title": "Many JavaScript libraries has a helper function called debounce.",
+      "content": "What does that function to?\nI what situations would it be a good idea to use the debounce function? ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:16:46.786Z"
+    },
+    {
+      "id": 4954575784073767,
+      "title": "The functions debounce and throttle are examples of decorator functions. ",
+      "content": "What is a decorator function? ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:17:03.361Z"
+    },
+    {
+      "id": 9071555174288844,
+      "title": "What is the difference between debounce and throttle?",
+      "content": "In what situations would debounce be better to use than throttle?\nIn what situations would throttle be better to use than debounce?",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:17:17.901Z"
+    },
+    {
+      "id": 9090648357299668,
+      "title": "What is git?",
+      "content": "Why would you want to use git?",
+      "answer": "No git yet!",
+      "author": "El Gito",
+      "created": "2019-09-30T18:17:42.951Z"
+    },
+    {
+      "id": 4324694251469818,
+      "title": "What do these four git commands do!",
+      "content": "git clone https://gh.com/ekw/lint.git\ngit add .\ngit commit -m \"Bugfix\"\ngit push",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:18:25.803Z"
+    },
+    {
+      "id": 6391609340075317,
+      "title": "What is GitHub?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:18:35.693Z"
+    },
+    {
+      "id": 2455840443973969,
+      "title": "Study the code below!",
+      "content": "What is assigned to the variable log?\nWhat is printed to the console?\n\nconst ENV = 'PRODUCTION';\n\nconst log = ENV === 'DEBUG' ?\n                    console.log :\n                    () => {};\n\nlog('Hello there!');",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:18:53.873Z"
+    },
+    {
+      "id": 10021281975315366,
+      "title": "What is printed to the console?",
+      "content": "var name = 'Kalle';\nmessage = 'Hello ' + name;\nconsole.log(message);",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:19:14.506Z"
+    },
+    {
+      "id": 6365925259396477,
+      "title": "What is printed to the console?",
+      "content": "'use strict';\nvar name = 'Kalle';\nmessage = 'Hello ' + name;\nconsole.log(message);",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:19:34.770Z"
+    },
+    {
+      "id": 728986650282452,
+      "title": "What is strict mode in JavaScript?",
+      "content": "How does it work?\nWhen should you use it?",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:20:04.994Z"
+    },
+    {
+      "id": 7585159043325892,
+      "title": "What is the ternary operator?",
+      "content": "Write a code example!",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:20:20.600Z"
+    },
+    {
+      "id": 2917251324520095,
+      "title": "There are two (2) different notations for accessing (object) properties in JavaScript.",
+      "content": "Write a small code example for each one\nExplain the difference between them",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:20:35.296Z"
+    },
+    {
+      "id": 9081751856231302,
+      "title": "There are three (3) different ways to create objects in JavaScript. ",
+      "content": "Write a small code example for each one!",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:20:58.717Z"
+    },
+    {
+      "id": 46787762403486970,
+      "title": "Translate these words into Swedish and explain what they mean! ",
+      "content": "Also, write a code snippet for each explanation!\nAssign\nInitialize\nDeclare",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:21:17.890Z"
+    },
+    {
+      "id": 8240483791689442,
+      "title": "What is asynchronous programming?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:21:30.548Z"
+    },
+    {
+      "id": 26220733074089596,
+      "title": "In JavaScript, there’s always a global object defined.",
+      "content": "What is the global object?\nWhat is the name of the global object in a browser?\nWhat is name of the global object in Node.js?",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:21:45.628Z"
+    },
+    {
+      "id": 13837671318360932,
+      "title": "The code has four variables (a, b, c, and d). What scope has each variable?",
+      "content": "function foo(a) {\n    b = 'Hello ';\n    console.log(a + b);\n}\n\nlet c = true;\nif(c) {\n    let d = 'Kalle';\n    foo(d);\n}",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:22:00.390Z"
+    },
+    {
+      "id": 38755567442528820,
+      "title": "What is the difference between function declaration and function expression?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:22:12.839Z"
+    },
+    {
+      "id": 2424414843664201,
+      "title": "What is the difference between a statement and an expression?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:22:20.774Z"
+    },
+    {
+      "id": 24664216224247184,
+      "title": "What is printed to the console?",
+      "content": "let a = 22 + '22';\nlet b = 22 - '22';\n\nconsole.log(typeof a);\nconsole.log(typeof b);",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:22:38.647Z"
+    },
+    {
+      "id": 4274758334638098,
+      "title": "What is printed to the console?",
+      "content": "let a = 0;\nlet b = '0';\n\nlet c = a ? 'a' : 'not a';\nlet d = b ? 'b' : 'not b';\nlet e = a == b ? 'a == b' : 'a != b';\n\nconsole.log(c);\nconsole.log(d);\nconsole.log(e);",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:22:52.512Z"
+    },
+    {
+      "id": 6575988429195028,
+      "title": "What is printed to the console?",
+      "content": "let a = { size: 1 };\nlet b = { size: 1 };\n\nconsole.log(a == b ? 'red' : 'blue');\nconsole.log(a === b ? 'green' : 'black');\n",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:23:18.033Z"
+    },
+    {
+      "id": 5461740511612749,
+      "title": "What is printed to the console?",
+      "content": "function B(x) {\n    x.name = 'B';\n}\n\nfunction C(x) {\n    x = { name: 'C' };\n}\n\nlet obj = { name: 'A' };\n\nB(obj);\nconsole.log(obj.name);\n\nC(obj);\nconsole.log(obj.name);",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:23:51.810Z"
+    },
+    {
+      "id": 3281517409591184,
+      "title": "The code has four variables (a, b, c, and d). What scope has each variable?",
+      "content": "function foo(a) {\n    b = 'Hello ';\n    console.log(b + a);\n}\n\nlet c = true;\n\nif (c) {\n    let d = 'Kalle';\n    foo(d);\n}",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:24:11.150Z"
+    },
+    {
+      "id": 5388966990982168,
+      "title": "When foo is called, what type is b expected to have?",
+      "content": "foo seems a bit complicated. Why doesn’t foo return result directly? What is the reason?\n \nfunction foo(a, b) {\n    process(a, (result) => {\n        b(result);\n    });\n}",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:24:30.084Z"
+    },
+    {
+      "id": 9091793507925372,
+      "title": "What is a pure function? ",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:24:52.812Z"
+    },
+    {
+      "id": 4396561896341905,
+      "title": "What is a decorator function? ",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:25:02.674Z"
+    },
+    {
+      "id": 46297233051577710,
+      "title": "What is asynchronous programming?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:25:11.699Z"
+    },
+    {
+      "id": 5952558438242356,
+      "title": "What is Node.js?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:25:19.607Z"
+    },
+    {
+      "id": 4181225210887305,
+      "title": "What is the difference between function declaration and function expression",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:25:32.292Z"
+    },
+    {
+      "id": 3905410193346337,
+      "title": "What is the difference between a statement and an expression?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:25:40.624Z"
+    },
+    {
+      "id": 6744936219199499,
+      "title": "What is the Document Object Model?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:26:04.399Z"
+    },
+    {
+      "id": 6247834922065137,
+      "title": "What is the difference between BOM and DOM? Explain!",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:26:15.644Z"
+    },
+    {
+      "id": 6063065139086713,
+      "title": "What is printed to the console?",
+      "content": "Add some JavaScript that prints the textContent of the last span to the console (your script should print “Rules” to the console).\n\n\n<div class=\"main\">\n    <div>\n        <span class=\"foo bar\">Hello</span>\n    </div>\n    <div>\n        <span class=\"bar foo\">World</span>\n    </div>\n</div>\n\n<div class=\"sidebar\">\n    <div>\n        <span>DOM</span>\n    </div>\n    <div>\n        <span>Rules</span>\n    </div>\n</div>\n\n<script>\nvar a = document.querySelector('.main div');\nvar b = a.parentElement;\nvar c = b.querySelectorAll('.bar.foo')[0];\nconsole.log(c.innerText);\n</script>",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:26:35.609Z"
+    },
+    {
+      "id": 22714156428809410,
+      "title": "DOM Elements have properties and attributes.",
+      "content": "What is the difference between them?\n\nWrite a short code snippet that prints a property value to the console!\n\nWrite a short code snippet that prints an attribute value to the console!\n\nWrite a code snippet that changes a property value!\n\nWrite a code snippet that changes an attribute value!",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:27:02.902Z"
+    },
+    {
+      "id": 5069028136594537,
+      "title": "What is printed to the console?",
+      "content": "<input id=\"title\" value=\"Hello\" />\n\n<script>\nvar a = document.getElementById('title');\n\na.value = 'World';\nconsole.log(a.getAttribute('value'));\n\na.setAttribute('value', 'JavaScript');\nconsole.log(a.value);\n</script>",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:27:20.974Z"
+    },
+    {
+      "id": 7378541469896391,
+      "title": "Write a script that replaces the span elements with strong elements. ",
+      "content": "Before:\n<ul>\n    <li><span>Hello</span></li>\n    <li><span>World</span></li>\n</ul>\n\n\nAfter:\n<ul>\n    <li><strong>Hello</strong></li>\n    <li><strong>World</strong></li>\n</ul>",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:27:39.783Z"
+    },
+    {
+      "id": 2377841066249583,
+      "title": "Explain these:",
+      "content": "Event handler\nEvent listener\nEvent target\nEvent object\nEvent type",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:28:10.530Z"
+    },
+    {
+      "id": 7639054787690547,
+      "title": "The code below doesn’t work. What is the problem? Find the bug!",
+      "content": "function foo() {\n    console.log('foo');\n}\n\nbutton.onclick = foo();",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:28:24.559Z"
+    },
+    {
+      "id": 9407579766860256,
+      "title": "The code below contains two different ways to add an event handler. Which way is best, A or B? Explain why!",
+      "content": "// A\nel.onclick = function () {\n    alert.log('hej');\n};\n\n// B\nel.addEventListener('click', function () {\n    alert('hej');\n});",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:28:40.024Z"
+    },
+    {
+      "id": 6947692902456225,
+      "title": "What is event bubbling? Explain!",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:28:51.758Z"
+    },
+    {
+      "id": 6032516185419319,
+      "title": "How do you stop an event from bubbling?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:29:01.537Z"
+    },
+    {
+      "id": 21277470686009616,
+      "title": "What is preventDefault? What does it do?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:29:12.499Z"
+    },
+    {
+      "id": 693050748154243,
+      "title": "What is event delegation?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:29:24.154Z"
+    },
+    {
+      "id": 8649334272814152,
+      "title": "Why would you use event delegation? What is it good for?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:29:33.113Z"
+    },
+    {
+      "id": 1533691202331331,
+      "title": "What is Express and what can it be used for?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:29:52.235Z"
+    },
+    {
+      "id": 7601202019466375,
+      "title": "What does this command do?",
+      "content": "npm init",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:30:06.245Z"
+    },
+    {
+      "id": 17233001321564934,
+      "title": "In a node package there is a file named package.json.",
+      "content": "What is that file used for?",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:30:21.719Z"
+    },
+    {
+      "id": 8129303824880805,
+      "title": "What is routing? ",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:30:30.658Z"
+    },
+    {
+      "id": 8417088394435979,
+      "title": "Study the app below!",
+      "content": "What does this app do? How does it work?\nWhat is the JavaScript type of the variable express?\nHow many callbacks are there in the app?\n\n\nconst express = require('express');\nconst app = express();\n\napp.get('/', (req, res) => {\n    res.send('Hello World!');\n});\n\napp.listen(3000);",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:30:45.110Z"
+    },
+    {
+      "id": 33582964944932024,
+      "title": "What does the code do? Explain!",
+      "content": "app.use(express.static('static'));",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:30:58.952Z"
+    },
+    {
+      "id": 9703963555835816,
+      "title": "What does the code do? Explain!",
+      "content": "app.set('view engine', 'pug');",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:31:13.540Z"
+    },
+    {
+      "id": 3634441533648446,
+      "title": "In git you can have a file named .gitignore. What is that file used for? When would you use it?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:31:38.780Z"
+    },
+    {
+      "id": 9873256269686736,
+      "title": "What does these commands do? Explain each one!",
+      "content": "git add .\ngit commit -m “Added .gitignore”\ngit push",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:31:55.365Z"
+    },
+    {
+      "id": 9330811346331268,
+      "title": "What does this command do? Explain!",
+      "content": "git clone https://github.com/u/project.git",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:32:11.139Z"
+    },
+    {
+      "id": 7563701153023534,
+      "title": "What is the difference between these two commands? Explain! ",
+      "content": "npm install\nnpm init",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:32:30.443Z"
+    },
+    {
+      "id": 4615254327384899,
+      "title": "What is the difference between these two commands? Explain!",
+      "content": "npm install express\nnpm install express --save",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:32:46.315Z"
+    },
+    {
+      "id": 3895845776285842,
+      "title": "What is Heroku?",
+      "content": "EXPLAIN! (ง '̀͜ '́ )ง",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:33:29.919Z"
+    },
+    {
+      "id": 24649000127059470,
+      "title": "Name at least two alternatives to Heroku!",
+      "content": "EXPLAIN! (ง '̀͜ '́ )ง",
+      "answer": "No answer yet!",
+      "author": "No answer yet!",
+      "created": "2019-09-30T18:33:55.294Z"
+    },
+    {
+      "id": 432149573980547,
+      "title": "What command do you use to deploy your application to Heroku?",
+      "content": "EXPLAIN! (ง '̀͜ '́ )ง",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:34:22.492Z"
+    },
+    {
+      "id": 8026570974726612,
+      "title": "What is a CLI?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:34:31.661Z"
+    },
+    {
+      "id": 4451970940535388,
+      "title": "What would be an alternative to a CLI?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:34:39.490Z"
+    },
+    {
+      "id": 49494081429459330,
+      "title": "What is MongoDB? ",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "No answer yet!",
+      "created": "2019-09-30T18:36:11.807Z"
+    },
+    {
+      "id": 577959459781171,
+      "title": "What is the difference between a server and a client?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "No answer yet!",
+      "created": "2019-09-30T18:35:41.694Z"
+    },
+    {
+      "id": 5297545308467884,
+      "title": "Inside a npm package, there are two different ways to install a dependency (another npm package). ",
+      "content": "What are those two ways?",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:36:33.380Z"
+    },
+    {
+      "id": 9078675332127728,
+      "title": "What is a git remote? ",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:36:44.304Z"
+    },
+    {
+      "id": 21907843504071144,
+      "title": "When you’re working with git, you have:",
+      "content": "Working Directory\nStaging Area\nRepository\n\nExplain the difference between these three!",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:37:02.925Z"
+    },
+    {
+      "id": 44541549553672750,
+      "title": "What is locus of control? ",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:37:25.805Z"
+    },
+    {
+      "id": 343399555806536,
+      "title": "Study the code below!",
+      "content": "How many arguments are passed to the function insertOne?\n\nWhat are the types of the arguments that are passed to the function insertOne?\n\nHow many callbacks can you find in the code?\n\nWhat does the code do? Give an overview explanation!\n\n\napp.post('/tweets', (req, res) => {\n    const tweet = req.body.tweet;\n    const collection = db.collection('tweets');\n    collection.insertOne(\n        { content: tweet },\n        function (err, result) {\n            if (err) throw err;\n            res.redirect(`/tweets/${result.insertedId}`);\n        });\n});",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:37:43.947Z"
+    },
+    {
+      "id": 9043211787710000,
+      "title": "What is the difference between these two inputs? ",
+      "content": "<input type=\"button\" value=\"OK\" />\n<input type=\"submit\" value=\"OK\" />",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:38:05.739Z"
+    },
+    {
+      "id": 34772584295857336,
+      "title": "What does AJAX stand for?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:38:38.687Z"
+    },
+    {
+      "id": 3212693015496466,
+      "title": "What is AJAX?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:38:50.325Z"
+    },
+    {
+      "id": 8123556199470943,
+      "title": "Why would you want to use AJAX?",
+      "content": "What is it good for?",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:39:07.130Z"
+    },
+    {
+      "id": 252770251248861,
+      "title": "What does HTTP stand for?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:39:21.245Z"
+    },
+    {
+      "id": 7556513254142105,
+      "title": "What is HTTP? ",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:39:35.064Z"
+    },
+    {
+      "id": 11791345033447032,
+      "title": "Requests / Responses",
+      "content": "Who sends HTTP Requests? Client or server?\nWho sends HTTP Responses? Client or server?",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:40:04.396Z"
+    },
+    {
+      "id": 283555949879962,
+      "title": "There are two different AJAX API in the browser. The XMLHttpRequest object and the fetch function.",
+      "content": "What is the difference between them? ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:40:29.234Z"
+    },
+    {
+      "id": 39655436692052910,
+      "title": "What does JSON stand for? ",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:40:53.830Z"
+    },
+    {
+      "id": 1298170287683732,
+      "title": "What is JSON? ",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:41:02.066Z"
+    },
+    {
+      "id": 8455077352740774,
+      "title": "Name three different scenarios where you could use JSON! ",
+      "content": "I SAID THREE! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:41:21.238Z"
+    },
+    {
+      "id": 5455400663418296,
+      "title": "If you don’t want to use JSON, what could you use instead? ",
+      "content": "Name one alternative to JSON!",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:41:40.641Z"
+    },
+    {
+      "id": 6625590027865054,
+      "title": "If you want to convert a JavaScript object to JSON, what function do you use?",
+      "content": "ANSWER ME! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:41:56.373Z"
+    },
+    {
+      "id": 4141799424966114,
+      "title": "If you want to convert JSON to a JavaScript object, what function do you use?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:42:10.345Z"
+    },
+    {
+      "id": 5071721992873092,
+      "title": "Let’s say you have some JSON stored in a variable named bar in JavaScript. ",
+      "content": "What is the JavaScript type of bar?",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:42:28.234Z"
+    },
+    {
+      "id": 9260943464492266,
+      "title": "Study the code below.",
+      "content": "What is printed to the console?\nHow many callbacks are there?\n\n\n\nlet xhr = new XMLHttpRequest();\n\nxhr.open('GET', '/user.json');\n\nxhr.onload = function () {\n    console.log(typeof xhr.response);\n    console.log(typeof JSON.parse(xhr.response));\n};\n\nxhr.send();\n\nconsole.log('All done!');",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:42:45.634Z"
+    },
+    {
+      "id": 6809582262466571,
+      "title": "What is a Promise?",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:43:15.724Z"
+    },
+    {
+      "id": 18099536562343988,
+      "title": "What is printed to the console?",
+      "content": "fetch('/articles')\n.then(x => console.log('A'));\n\nconsole.log('B');",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:43:34.494Z"
+    },
+    {
+      "id": 37219635424075840,
+      "title": "What is printed to the console?",
+      "content": "async function foo() {\n    return 7;\n}\n\nconsole.log(typeof foo);\nconsole.log(typeof foo());",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:43:51.467Z"
+    },
+    {
+      "id": 2691132083703087,
+      "title": "When would you use promises? ",
+      "content": "In what situations?",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:44:12.787Z"
+    },
+    {
+      "id": 42345825692829070,
+      "title": "Study the code below.",
+      "content": "After the assignment, what type is x?\nWhat does x contain? What kind of value?\nWhat does the code do? Explain how it works!\n\nlet x = await Promise.all([\n    fetch('/article/1'),\n    fetch('/article/2'),\n    fetch('/article/3')\n]);",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:44:28.322Z"
+    },
+    {
+      "id": 9931475183612664,
+      "title": "Study the code below. What does it do? Explain how it works!",
+      "content": "EXPLAIN! (ノಠ益ಠ)ノ",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:44:45.557Z"
+    },
+    {
+      "id": 41922342122323760,
+      "title": "What is best? Why?",
+      "content": "Old school  callbacks\nPromises with .then\nPromises with await",
+      "answer": "No answer yet!",
+      "author": "El Presidente",
+      "created": "2019-09-30T18:45:00.463Z"
+    }
+  ]
 }
