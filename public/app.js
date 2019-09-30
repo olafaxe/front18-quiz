@@ -12,7 +12,7 @@ let scrollLock = false;
 let startPos = 1;
 let dbBuffer = [];
 
-let articleObj = function(id, title, content, author) {
+let articleObj = function(id, title, content, answer, author) {
   if (typeof id === "undefined") {
     this.id = Number(
       Math.random()
@@ -25,6 +25,7 @@ let articleObj = function(id, title, content, author) {
 
   this.title = title;
   this.content = content;
+  this.answer = answer;
   this.author = author;
   this.created = new Date();
 };
@@ -100,7 +101,7 @@ function checkArticles(dbContent) {
       });
       console.log(add);
       if (add < 4 || hitBottom) {
-        let art = new articleObj(e.id, e.title, e.content, e.author);
+        let art = new articleObj(e.id, e.title, e.content, e.answer, e.author);
         let fakeobj = [];
         fakeobj.push(art);
         articleHandler(fakeobj, false, scrollLock, hitBottom);
@@ -109,9 +110,9 @@ function checkArticles(dbContent) {
   });
 }
 
-function addNews(tit, cont, auth) {
+function addNews(tit, cont, ans, auth) {
   let id;
-  let news = new articleObj(id, tit, cont, auth);
+  let news = new articleObj(id, tit, cont, ans, auth);
   let newsjson = JSON.stringify(news);
   let xhr = new XMLHttpRequest();
   xhr.open("POST", "/articles/");
@@ -122,6 +123,15 @@ function addNews(tit, cont, auth) {
 //****EVENT LISTENERS****//
 //***********************//
 
+window.addEventListener("click", e => {
+  if (e.target.classList.contains("article-answer")) {
+    let button = e.target;
+    let answer = button.nextSibling;
+    answer.classList.toggle("display-none");
+    button.classList.toggle("display-none");
+  }
+});
+
 addbtn.addEventListener("click", e => {
   addbtn.classList.add("click");
   setTimeout(() => {
@@ -129,7 +139,7 @@ addbtn.addEventListener("click", e => {
   }, 500);
   if (addfailsafe === false) {
     let articleId;
-    formHandler(articleId, "Make News!", "Boom! News.", "submit-add");
+    formHandler(articleId, "Add question!", "Boom! QUIZZED.", "submit-add");
     addfailsafe = true;
   } else {
     return;
@@ -150,11 +160,12 @@ container.addEventListener("click", e => {
     let inputcontainer = document.querySelector(".input-container");
     let inputTitle = document.querySelector(".input-title").value;
     let inputContent = document.querySelector(".input-content").value;
+    let inputAnswer = document.querySelector(".answer-content").value;
     let inputAuthor = document.querySelector(".input-author").value;
     event.preventDefault();
     //when submit, if making new article do this
     if (e.target.classList.contains("submit-add")) {
-      addNews(inputTitle, inputContent, inputAuthor);
+      addNews(inputTitle, inputContent, inputAnswer, inputAuthor);
       inputcontainer.remove();
       updateArticles(checkArticles, "", true, true);
       addfailsafe = false;
@@ -178,6 +189,8 @@ container.addEventListener("click", e => {
                 e.id,
                 inputTitle,
                 inputContent,
+                inputAnswer,
+                inputAnswer,
                 inputAuthor
               );
               let newsjson = JSON.stringify(news);
@@ -259,11 +272,12 @@ container.addEventListener("click", e => {
         if (e.id === articleId) {
           formHandler(
             articleId,
-            "Edit News!",
-            "Boom! Edited.",
+            "Edit question!",
+            "Boom! RE-QUIZZED.",
             "submit-edit",
             e.title,
             e.content,
+            e.answer,
             e.author
           );
         }

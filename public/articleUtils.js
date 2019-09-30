@@ -60,6 +60,20 @@ export function articleHandler(dbContent, generate, scrollLock) {
     contentTag.setAttribute("class", "article-content");
     article.appendChild(contentTag);
 
+    let showAnswer = document.createElement("input");
+    showAnswer.setAttribute("class", "article-answer");
+    showAnswer.setAttribute("type", "button");
+    showAnswer.setAttribute("value", "SHOW ANSWER");
+    article.appendChild(showAnswer);
+
+    let contentAnswerTag = document.createElement("p");
+    contentAnswerTag.innerText = element.answer;
+    contentAnswerTag.setAttribute(
+      "class",
+      "article-content_answer display-none"
+    );
+    article.appendChild(contentAnswerTag);
+
     let removeArticleDiv = document.createElement("div");
     removeArticleDiv.setAttribute("class", "article-remove fas fa-trash-alt");
     article.appendChild(removeArticleDiv);
@@ -74,10 +88,12 @@ export function formHandler(
   submitType,
   titDef,
   contDef,
+  ansDef,
   authDef
 ) {
   let defaultTitle = titDef || "";
   let defaultContent = contDef || "";
+  let defaultAnswer = ansDef || "No answer yet!";
   let defaultAuthor = authDef || "";
 
   let inputcontainer = document.createElement("div");
@@ -110,7 +126,7 @@ export function formHandler(
   let inputTitleLabel = document.createElement("label");
   inputTitleLabel.setAttribute("class", "title-label");
   inputTitleLabel.setAttribute("for", "title");
-  inputTitleLabel.innerText = "Title: ";
+  inputTitleLabel.innerText = "Question headline: ";
   inputTitleDiv.appendChild(inputTitleLabel);
 
   let inputTitle = document.createElement("input");
@@ -128,7 +144,7 @@ export function formHandler(
   let inputContentLabel = document.createElement("label");
   inputContentLabel.setAttribute("class", "content-label");
   inputContentLabel.setAttribute("for", "content");
-  inputContentLabel.innerText = "Content: ";
+  inputContentLabel.innerText = "Question text: ";
   inputContentDiv.appendChild(inputContentLabel);
 
   let inputContent = document.createElement("textarea");
@@ -141,6 +157,27 @@ export function formHandler(
   inputContent.setAttribute("name", "content");
   inputContent.innerText = defaultContent;
   inputContentDiv.appendChild(inputContent);
+
+  let inputAnswerDiv = document.createElement("div");
+  inputAnswerDiv.setAttribute("class", "input-container");
+  inputForm.appendChild(inputAnswerDiv);
+
+  let inputAnswerLabel = document.createElement("label");
+  inputAnswerLabel.setAttribute("class", "input-label");
+  inputAnswerLabel.setAttribute("for", "answer");
+  inputAnswerLabel.innerText = "Answer: ";
+  inputAnswerDiv.appendChild(inputAnswerLabel);
+
+  let inputAnswer = document.createElement("textarea");
+  inputAnswer.setAttribute("class", "answer-content");
+  inputAnswer.setAttribute("cols", "30");
+  inputAnswer.setAttribute("rows", "5");
+  inputAnswer.setAttribute("form", "news-form");
+  inputAnswer.setAttribute("type", "textarea");
+  inputAnswer.setAttribute("id", "answer");
+  inputAnswer.setAttribute("name", "answer");
+  inputAnswer.innerText = defaultAnswer;
+  inputAnswerDiv.appendChild(inputAnswer);
 
   let inputAuthorDiv = document.createElement("div");
   inputAuthorDiv.setAttribute("class", "input-container");
