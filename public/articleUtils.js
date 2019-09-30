@@ -75,7 +75,10 @@ export function articleHandler(dbContent, generate, scrollLock) {
     article.appendChild(contentAnswerTag);
 
     let removeArticleDiv = document.createElement("div");
-    removeArticleDiv.setAttribute("class", "article-remove fas fa-trash-alt");
+    removeArticleDiv.setAttribute(
+      "class",
+      "article-remove fas fa-trash-alt display-none"
+    );
     article.appendChild(removeArticleDiv);
   });
   scrollLock = false;
