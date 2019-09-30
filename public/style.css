@@ -268,3 +268,7 @@ body {
     height: 275px;
   }
 }
+
+.article-remove {
+  display: none;
+}
