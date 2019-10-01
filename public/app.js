@@ -197,7 +197,6 @@ container.addEventListener("click", e => {
                 inputTitle,
                 inputContent,
                 inputAnswer,
-                inputAnswer,
                 inputAuthor
               );
               let newsjson = JSON.stringify(news);
