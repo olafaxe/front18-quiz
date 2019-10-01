@@ -279,12 +279,7 @@ body {
 
 @media screen and (max-height: 670px) {
   .content {
-    height: 360px;
-  }
-}
-@media screen and (max-height: 670px) {
-  .content {
-    height: 395px;
+    height: 425px;
   }
 }
 
@@ -295,6 +290,18 @@ body {
   }
   .article-container {
     width: 530px;
+  }
+}
+
+@media screen and (max-height: 615px) {
+  .content {
+    height: 375px;
+  }
+}
+
+@media screen and (max-height: 585px) {
+  .content {
+    height: 355px;
   }
 }
 
